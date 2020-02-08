@@ -2,15 +2,11 @@ import './OHIFLogo.css';
 
 import { Icon } from '@ohif/ui';
 import React from 'react';
+// import logo from './uom.png';
 
 function OHIFLogo() {
   return (
-    <a
-      target="_blank"
-      rel="noopener noreferrer"
-      className="header-brand"
-      href="http://ohif.org"
-    >
+    <div>
       <Icon name="ohif-logo" className="header-logo-image" />
       {/* Logo text would fit smaller displays at two lines:
        *
@@ -20,7 +16,7 @@ function OHIFLogo() {
        * Or as `OHIF` on really small displays
        */}
       <Icon name="ohif-text-logo" className="header-logo-text" />
-    </a>
+    </div>
   );
 }
 

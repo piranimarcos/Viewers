@@ -66,7 +66,7 @@ function Header(props) {
   // ANTD -- Hamburger, Drawer, Menu
   return (
     <>
-      <div className="notification-bar">{t('INVESTIGATIONAL USE ONLY')}</div>
+      {/* <div className="notification-bar">{t('USO COMERCIAL')}</div> */}
       <div className={`entry-header ${home ? 'header-big' : ''}`}>
         <div className="header-left-box">
           {location && location.studyLink && (
@@ -74,11 +74,13 @@ function Header(props) {
               to={location.studyLink}
               className="header-btn header-viewerLink"
             >
-              {t('Back to Viewer')}
+              {t('Volver')}
             </Link>
           )}
 
-          {children}
+          {/* {children} */}
+
+          <img className="logo" src="assets/uom.png" />
 
           {showStudyList && !home && (
             <Link
@@ -88,13 +90,14 @@ function Header(props) {
                 state: { studyLink: location.pathname },
               }}
             >
-              {t('Study list')}
+
+              {t('Lista de estudios')}
             </Link>
           )}
         </div>
 
         <div className="header-menu">
-          <span className="research-use">{t('INVESTIGATIONAL USE ONLY')}</span>
+          {/* <span className="research-use">{t('USO COMERCIAL')}</span> */}
           <Dropdown title={t('Options')} list={options} align="right" />
         </div>
       </div>

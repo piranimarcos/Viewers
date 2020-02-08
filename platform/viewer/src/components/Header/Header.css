@@ -4,6 +4,20 @@
   height: var(--top-bar-height);
 }
 
+.blanco{
+  height: 30px;
+  text-decoration: none;
+  text-decoration-color: none;
+  display: flex;
+  align-items: center;
+  color: var(--text-primary-color);
+}
+
+.logo{
+  padding: 0px;
+  width: 150px;
+}
+
 .dd-item {
   width: 100%;
 }
@@ -128,6 +142,10 @@
 
   .entry-header.header-big .header-logo-text {
     width: 40%;
+  }
+
+  .logo{
+    width: 100px;
   }
 
   /* Account for notification bar height */
