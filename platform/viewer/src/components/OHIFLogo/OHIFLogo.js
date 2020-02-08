@@ -7,15 +7,9 @@ import React from 'react';
 function OHIFLogo() {
   return (
     <div>
-      <Icon name="ohif-logo" className="header-logo-image" />
-      {/* Logo text would fit smaller displays at two lines:
-       *
-       * Open Health
-       * Imaging Foundation
-       *
-       * Or as `OHIF` on really small displays
-       */}
-      <Icon name="ohif-text-logo" className="header-logo-text" />
+      {/* <Icon name="ohif-logo" className="header-logo-image" /> */}
+
+      <img className="header-logo-image" src={process.env.PUBLIC_URL + 'assets/uom.png'} />
     </div>
   );
 }

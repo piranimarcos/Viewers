@@ -80,7 +80,10 @@ function Header(props) {
 
           {/* {children} */}
 
-          <img className="logo" src="assets/uom.png" />
+          {home && (
+            <img className="logo" src={process.env.PUBLIC_URL + 'assets/uom.png'} />
+          )}
+
 
           {showStudyList && !home && (
             <Link
