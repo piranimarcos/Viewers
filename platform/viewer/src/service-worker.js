@@ -7,12 +7,31 @@ importScripts(
 // https://developers.google.com/web/tools/workbox/modules/workbox-core
 workbox.core.skipWaiting();
 workbox.core.clientsClaim();
+workbox.setConfig({
+  "dontCacheBustURLsMatching": new RegExp('.+\.[a-f0-9]{20}\..+'),
+  "maximumFileSizeToCacheInBytes": 5000000
+});
 
 // Cache static assets that aren't precached
 workbox.routing.registerRoute(
   /\.(?:js|css)$/,
-  new workbox.strategies.StaleWhileRevalidate({
-    cacheName: 'static-resources',
+  // new workbox.strategies.StaleWhileRevalidate({
+  //   cacheName: 'static-resources',
+  //   maximumFileSizeToCacheInBytes: 50000000
+  // })
+
+  new workbox.strategies.CacheFirst({
+    cacheName: 'archivos',
+    maximumFileSizeToCacheInBytes: 50000000,
+    plugins: [
+      new workbox.cacheableResponse.CacheableResponsePlugin({
+        statuses: [0, 200],
+      }),
+      new workbox.expiration.ExpirationPlugin({
+        maxAgeSeconds: 60 * 60 * 24 * 100, // 100 dias
+        maxEntries: 150,
+      }),
+    ],
   })
 );
 
@@ -20,7 +39,7 @@ workbox.routing.registerRoute(
 workbox.routing.registerRoute(
   /^https:\/\/fonts\.googleapis\.com/,
   new workbox.strategies.StaleWhileRevalidate({
-    cacheName: 'google-fonts-stylesheets',
+    cacheName: 'google-fonts-stylesheets'
   })
 );
 

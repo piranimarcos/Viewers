@@ -10,6 +10,7 @@ const loadWebWorkersRule = require('./rules/loadWebWorkers.js');
 const transpileJavaScriptRule = require('./rules/transpileJavaScript.js');
 // ~~ PLUGINS
 const TerserJSPlugin = require('terser-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 // ~~ ENV VARS
 const NODE_ENV = process.env.NODE_ENV;
 const QUICK_BUILD = process.env.QUICK_BUILD;
@@ -84,6 +85,7 @@ module.exports = (env, argv, { SRC_DIR, DIST_DIR }) => {
         'process.env.LOCIZE_PROJECTID': JSON.stringify(process.env.LOCIZE_PROJECTID || ''),
         'process.env.LOCIZE_API_KEY': JSON.stringify(process.env.LOCIZE_API_KEY || ''),
       }),
+      new CompressionPlugin()
     ],
     // Fix: https://github.com/webpack-contrib/css-loader/issues/447#issuecomment-285598881
     // For issue in cornerstone-wado-image-loader

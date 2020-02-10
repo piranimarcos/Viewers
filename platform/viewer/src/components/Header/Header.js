@@ -27,23 +27,23 @@ function Header(props) {
   useEffect(() => {
     const optionsValue = [
       {
-        title: t('About'),
+        title: t('Nosotros'),
         icon: { name: 'info' },
         onClick: () =>
           show({
             content: AboutContent,
-            title: t('OHIF Viewer - About'),
+            title: t('Visualizador de Estudios - Nosotros'),
           }),
       },
       {
-        title: t('Preferences'),
+        title: t('Preferencias'),
         icon: {
           name: 'user',
         },
         onClick: () =>
           show({
             content: ConnectedUserPreferencesForm,
-            title: t('User Preferences'),
+            title: t('User Preferencias'),
           }),
       },
     ];

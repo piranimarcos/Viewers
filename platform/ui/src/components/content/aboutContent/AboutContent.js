@@ -14,25 +14,25 @@ const AboutContent = () => {
   const itemsPreset = () => {
     return [
       {
-        name: t('Repository URL'),
-        value: 'https://github.com/OHIF/Viewers/',
-        link: 'https://github.com/OHIF/Viewers/',
+        name: t('Repositorio'),
+        // value: 'https://github.com/OHIF/Viewers/',
+        // link: 'https://github.com/OHIF/Viewers/',
       },
       {
-        name: t('Latest Master Commits'),
-        value: 'https://github.com/OHIF/Viewers/commits/master',
-        link: 'https://github.com/OHIF/Viewers/commits/master',
+        name: t('Ultimo commit'),
+        // value: 'https://github.com/OHIF/Viewers/commits/master',
+        // link: 'https://github.com/OHIF/Viewers/commits/master',
       },
       {
-        name: 'Version Number',
-        value: process.env.VERSION_NUMBER,
+        name: 'Version',
+        // value: process.env.VERSION_NUMBER,
       },
       {
-        name: t('Build Number'),
-        value: process.env.BUILD_NUM,
+        name: t('Numero de compilación'),
+        // value: process.env.BUILD_NUM,
       },
       {
-        name: t('Browser'),
+        name: t('Navegador'),
         value: `${capitalize(name)} ${version}`,
       },
       {
@@ -64,27 +64,27 @@ const AboutContent = () => {
           className="btn btn-default"
           target="_blank"
           rel="noopener noreferrer"
-          href="https://groups.google.com/forum/#!forum/cornerstone-platform"
+          href="#"
         >
-          {t('Visit the forum')}
+          {t('Visita el foro')}
         </a>
         {` `}
         <a
           className="btn btn-default"
           target="_blank"
           rel="noopener noreferrer"
-          href="https://github.com/OHIF/Viewers/issues/new/choose"
+          href="#"
         >
-          {t('Report an issue')}
+          {t('Reporta un problema')}
         </a>
         {` `}
         <a
           className="btn btn-default"
           target="_blank"
           rel="noopener noreferrer"
-          href="http://ohif.org"
+          href="#"
         >
-          {t('More details')}
+          {t('Más detalles')}
         </a>
       </div>
       <div>
